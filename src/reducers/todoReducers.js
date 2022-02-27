@@ -9,7 +9,7 @@ const todoReducers = (state = initialData, action) => {
             const { id, data } = action.payload;
             return {
                 ...state,
-                data: [
+                list: [
                     ...state.list,
 
                     {
@@ -25,6 +25,7 @@ const todoReducers = (state = initialData, action) => {
             break;
 
         default:
+            return state;
             break;
     }
 

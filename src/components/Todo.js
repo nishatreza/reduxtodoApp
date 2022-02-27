@@ -35,7 +35,7 @@ const Todo = () => {
                             onChange={(event) => setInputData(event.target.value)}
 
                         />
-                        <i className="fa fa-plus add-btn" onClick={() => dispatch(addTodo(inputData))}></i>
+                        <i className="fa fa-plus add-btn" onClick={() => dispatch(addTodo(inputData), setInputData(''))}></i>
 
                     </div>
 
