@@ -1,7 +1,17 @@
-import React from 'react'
-import { } from './todo.css'
+import React, { useState } from 'react'
+import './todo.css';
+import { addTodo, deleteTodo, removeTodo } from '../actions/index';
+import { useDispatch } from 'react-redux';
+
 
 const Todo = () => {
+
+
+    const [inputData, setInputData] = useState('');
+
+    const dispatch = useDispatch();
+
+
     return (
         <>
 
@@ -20,8 +30,12 @@ const Todo = () => {
 
 
                     <div className="addItems">
-                        <input type="text" placeholder='add items' />
-                        <i className="fa fa-plus add-btn"></i>
+                        <input type="text" placeholder='add items'
+                            value={inputData}
+                            onChange={(event) => setInputData(event.target.value)}
+
+                        />
+                        <i className="fa fa-plus add-btn" onClick={() => dispatch(addTodo(inputData))}></i>
 
                     </div>
 
